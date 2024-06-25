@@ -6,4 +6,4 @@ Encodes a URL to a quickchart QRCode text
 node qrCodeEncode.js
 ```
 
-then paste the URL and copy the url sent by the encoder
+then paste the URL and the encoded url is copied to clipboard

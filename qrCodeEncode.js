@@ -19,7 +19,7 @@ new Promise((resolve, reject) => {
     const resultUrl = 'https://quickchart.io/qr?size=100&text=' + url.replaceAll('?', '%3F').replaceAll('&', '%26').replaceAll('=', '%3D').replaceAll('+', '%2B');
 
     clipboard.writeSync(resultUrl);
-    console.log('\n'  + '\x1b[38;5;42m' + resultUrl + '\x1b[0m' + 'copied in clipboard')
+    console.log('\n'  + '\x1b[38;5;42m' + resultUrl + '\x1b[0m' + ' copied in clipboard')
 }).catch(e => {
     console.error('\n \x1b[250;10;31m' + e + '\x1b[0m');
 });
