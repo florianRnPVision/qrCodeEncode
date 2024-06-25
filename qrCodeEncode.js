@@ -1,4 +1,7 @@
-const prompt = require('prompt-sync')();
+import promptSync from 'prompt-sync';
+import clipboard from 'clipboardy';
+
+const prompt = promptSync();
 
 const url = prompt('Enter the url to encode for QR Code : ');
 
@@ -15,7 +18,8 @@ new Promise((resolve, reject) => {
 }).then(() => {
     const resultUrl = 'https://quickchart.io/qr?size=100&text=' + url.replaceAll('?', '%3F').replaceAll('&', '%26').replaceAll('=', '%3D').replaceAll('+', '%2B');
 
-    console.log('\n' + '\x1b[38;5;42m' + resultUrl + '\x1b[0m')
+    clipboard.writeSync(resultUrl);
+    console.log('\n'  + '\x1b[38;5;42m' + resultUrl + '\x1b[0m' + 'copied in clipboard')
 }).catch(e => {
     console.error('\n \x1b[250;10;31m' + e + '\x1b[0m');
 });
